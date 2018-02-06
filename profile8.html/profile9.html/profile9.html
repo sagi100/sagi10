@@ -1,0 +1,32 @@
+<html>
+
+<body>
+    <script>
+        function add(x, y) {
+            const z = x + y;
+            return z;
+        }
+        function subtract(x, y) {
+            const z = x - y;
+            return z;
+        }
+        function mult(x, y) {
+            const z = x * y;
+            return z;
+        }
+        function div(x, y) {
+            const z = x / y;
+            return z;
+        }
+
+        //const result = div(subtract(add(mult(3,4),15),2),5);
+        //alert (result)
+        const result = mult(3, 4);
+        const result2 = add(result, 15);
+        const result3 = subtract(result2, 2);
+        const result4 = div(result3, 5);
+        alert(result4);
+    </script>
+</body>
+
+</html>

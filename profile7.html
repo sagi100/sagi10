@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <script>
+        function random(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        const level = prompt("בחר רמה בין 1-4");
+        let min = 10** (level - 1);
+        let max = 10** level;
+
+        let avshalom = false;
+        let right = 0;
+        let wrong = 0;
+        const op = prompt("איזו פעולת חישוב תרצה לבצע?");
+        while (!avshalom) {
+            let result
+
+            const z = random(min, max);
+            const x = random(min, max);
+            if (op === "+") {
+                result = x + z;
+            } else if (op === "-") {
+                result = x - z;
+            } else if (op === "*") {
+                result = x * z;
+            } else if (op === "/") {
+                result = x / z;
+            }
+
+
+            const answer = parseInt(prompt("חשב " + x + op + z));
+            if (answer === 0) {
+                avshalom = true;
+            } else {
+                if (result === answer) {
+                    alert("תשובה נכונה");
+                    right = right + 1;
+                } else {
+                    alert("טעות. התשובה הנכונה היא " + result);
+                    wrong = wrong + 1;
+                }
+
+            }
+        }
+        alert(' נכון ' + right + ' לא נכון ' + wrong)
+    </script>
+</head>
+
+</html>
